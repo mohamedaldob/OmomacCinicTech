@@ -1,0 +1,73 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"  >
+	
+    <link rel="stylesheet" href="{% static 'js/jquery.min.js' %}">
+  
+       <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      
+</head>
+       <body>
+
+    	      <!-- div container page-->
+							<div class="container-fluid contentdiv page-container">
+
+<!--###############################header#########################################################-->
+								<div class="row ">
+									<div class="col">
+									    <!-- navbar contain button logout -->
+										<nav class="navbar navbar-light bg-light justify-content-between">
+													<a class="navbar-brand">Omama clinic tech</a>
+													<form class="form-inline" >
+															{% if user.is_authenticated %}
+															     <p>  Hi {{ user.first_name}} !  </p>
+															{% endif %}		
+														<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href='{% url 'logout' %}'>Logout</a></button>
+													</form>
+											</nav>
+									</div>
+								</div>
+       
+<!--########################### ####content#########################################################-->
+                     {% block body %}
+
+                     {% endblock body %}
+
+
+<!--########################### ####footer#########################################################-->
+				            
+											<footer class="bg-light text-center text-lg-start page-footer">
+														<!-- Copyright -->
+													<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+															© 2021 Copyright:
+															<a class="text-dark" href="{ url'create'}">omomaclinctech.com</a>
+													</div>
+														<!-- Copyright -->
+											</footer>
+									 
+				
+<!--############################### end container#########################################################-->
+				</div> <!--end div container-->    
+       <script src="{% static  'js/jquery-3.2.1.slim.min.js' %}" ></script>
+			<script src="{% static 'js/popper.min.js' %}" ></script>
+			<script src="{% static 'js/bootstrap.min.js' %}" ></script>
+   </body>
+</html>
